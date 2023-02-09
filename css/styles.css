@@ -11246,3 +11246,11 @@ header.masthead .site-heading .h1 {
     font-size: 2.25rem;
   }
 }
+
+.post-subtitle {
+  font-weight: normal;
+}
+
+.lastArticle {
+  padding-bottom: 20px;
+}
