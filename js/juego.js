@@ -1,39 +1,129 @@
-
-let contador = 0
-
+let wrong = 0
+let correct = 0
+let track1 = 0
+let track2 = 0
+let track3 = 0
+let track4 = 0
+let track5 = 0
 
 function respuestaIncorrecta(){
     alert("Me parece que esa no es la respuesta correcta")
+    wrong++
 }
 
-function respuestaCorrecta(){
-    contador = contador + 1
-    console.log(contador)
-    const btnCorrecto = document.getElementById(`btn1`)
-    const btnIncorrecto1 = document.getElementById(`btn2`)
-    const btnIncorrecto2 = document.getElementById(`btn3`)
-    const btnIncorrecto3 = document.getElementById(`btn4`)
-    const areaJuego = document.getElementById("areaJuego")
-    if (contador == 1) {
-        const nuevaPregunta = document.createElement("div")
-        nuevaPregunta.setAttribute("class", "respuestas")
-        nuevaPregunta.innerHTML = `<p class='pregunta'>${pregunta2.titulo}</p><div class='respuestas'><div class='botonesTop'><button class='botonRespuesta' id='btn1'type='button' onclick='respuestaIncorrecta()'>${pregunta2.respuesta1}</button><button class='botonRespuesta' id='btn2'type='button' onclick='respuestaIncorrecta()'>${pregunta2.respuesta2}</button></div><div class='botonesBottom'><button class='botonRespuesta'  id='btn3'type='button' onclick='respuestaCorrecta()'>${pregunta2.respuesta3}</button><button class='botonRespuesta'  id='btn4'type='button'onclick='respuestaIncorrecta()'>${pregunta2.respuesta4}</button></div></div>`
-    
-        btnCorrecto.style.backgroundColor = 'green'
-        btnIncorrecto1.style.backgroundColor = 'red'
-        btnIncorrecto2.style.backgroundColor = 'red'
-        btnIncorrecto3.style.backgroundColor = 'red'
-    
-        areaJuego.appendChild(nuevaPregunta)
-    } else if (contador == 2){
+function respuestaCorrecta1(){
+ 
+    const btn1 = document.getElementById("p1_btn1")
+    const btn2 = document.getElementById("p1_btn2")
+    const btn3 = document.getElementById("p1_btn3")
+    const btn4 = document.getElementById("p1_btn4")
 
-    } else if (contador == 3){
+    btn1.style.backgroundColor = "red"
+    btn2.style.backgroundColor = "red"
+    btn3.style.backgroundColor = "green"
+    btn4.style.backgroundColor = "red"
 
-    } else if (contador == 4){
-
-    } else if (contador == 5) {
-
+    if (track1 == 0){
+        correct++
+        track1++
     }
-
+    if (correct == 5){
+        alert(`¡Buen trabajo haz completado el quiz! Te equivocaste ${wrong} veces`)
+    }
+    console.log(correct)
 }
 
+function respuestaCorrecta2(){
+
+    const btn1 = document.getElementById("p2_btn1")
+    const btn2 = document.getElementById("p2_btn2")
+    const btn3 = document.getElementById("p2_btn3")
+    const btn4 = document.getElementById("p2_btn4")
+
+    btn1.style.backgroundColor = "red"
+    btn2.style.backgroundColor = "red"
+    btn3.style.backgroundColor = "red"
+    btn4.style.backgroundColor = "green"
+
+    if (track2 == 0){
+        correct++
+        track2++
+    }
+    if (correct == 5){
+        alert(`¡Buen trabajo haz completado el quiz! Te equivocaste ${wrong} veces`)
+    }
+    console.log(correct)
+}
+
+function respuestaCorrecta3(){
+
+    const btn1 = document.getElementById("p3_btn1")
+    const btn2 = document.getElementById("p3_btn2")
+    const btn3 = document.getElementById("p3_btn3")
+    const btn4 = document.getElementById("p3_btn4")
+
+    btn1.style.backgroundColor = "red"
+    btn2.style.backgroundColor = "green"
+    btn3.style.backgroundColor = "red"
+    btn4.style.backgroundColor = "red"
+
+    if (track3 == 0){
+        correct++
+        track3++
+    }
+    if (correct == 5){
+        alert(`¡Buen trabajo haz completado el quiz! Te equivocaste ${wrong} veces`)
+    }
+    console.log(correct)
+}
+
+function respuestaCorrecta4(){
+
+    const btn1 = document.getElementById("p4_btn1")
+    const btn2 = document.getElementById("p4_btn2")
+    const btn3 = document.getElementById("p4_btn3")
+    const btn4 = document.getElementById("p4_btn4")
+
+    btn1.style.backgroundColor = "green"
+    btn2.style.backgroundColor = "red"
+    btn3.style.backgroundColor = "red"
+    btn4.style.backgroundColor = "red"
+
+    if (track4 == 0){
+        correct++
+        track4++
+    }
+    if (correct == 5){
+        alert(`¡Buen trabajo haz completado el quiz! Te equivocaste ${wrong} veces`)
+    }
+    console.log(correct)
+}
+
+function respuestaCorrecta5(){
+
+    const btn1 = document.getElementById("p5_btn1")
+    const btn2 = document.getElementById("p5_btn2")
+    const btn3 = document.getElementById("p5_btn3")
+    const btn4 = document.getElementById("p5_btn4")
+
+    btn1.style.backgroundColor = "red"
+    btn2.style.backgroundColor = "red"
+    btn3.style.backgroundColor = "green"
+    btn4.style.backgroundColor = "red"
+
+    if (track5 == 0){
+        correct++
+        track5++
+    }
+    
+    if (correct == 5){
+        if (wrong == 0){
+            alert(`¡Buen trabajo haz completado el quiz! ¡No te equivocaste ni una vez!`)
+        } else if (wrong == 1){
+            alert(`¡Buen trabajo haz completado el quiz! ¡Te equivocaste solo una vez!`)
+        } else if (wrong > 1) {
+            alert(`¡Buen trabajo haz completado el quiz! Te equivocaste ${wrong} veces`)
+        }
+    }
+    console.log(correct)
+}
